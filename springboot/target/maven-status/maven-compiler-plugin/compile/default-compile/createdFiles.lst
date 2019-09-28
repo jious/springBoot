@@ -1,0 +1,10 @@
+test\service\Impl\UserServiceImpl.class
+test\projection\UserProjection.class
+test\service\UserService.class
+test\swagger\swaggerUiConfig.class
+test\api\UserApiPatch.class
+test\repository\UserRepository.class
+test\api\UserApiPost.class
+test\controller\userController.class
+test\DemoApplication.class
+test\model\UserModel.class

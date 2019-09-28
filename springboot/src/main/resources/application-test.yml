@@ -1,0 +1,48 @@
+api:
+  debug: true
+
+debug: true
+
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://mysql-guanjia-cloud:3306/zufang-cloud?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: guanjia-cloud
+    password: guanjia-cloud-pwd
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      init-s-q-l: "SET NAMES utf8mb4"
+  redis:
+    host: redis
+  http:
+    multipart:
+      max-file-size: 2048MB
+      max-request-size: 2048MB
+
+startup:
+  domain: http://localhost:8081
+  static-res-locate: <>
+
+vendor:
+  ossAliYun:
+    access-key: <>
+    access-secret: <>
+    endpoint: http://oss-cn-beijing.aliyuncs.com
+    bucket: <>
+  sms:
+    debug: true
+    channel: alidy
+    alidy:
+      sign-name: <>
+      access-key: <>
+      access-secret: <>
+  oauth:
+    wx:
+      app:
+        app-id: <>
+        app-secret: <>
+
+
+

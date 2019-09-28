@@ -1,0 +1,50 @@
+debug: true
+
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+
+server:
+  context-path: /${spring.application.name}
+  tomcat:
+    max-threads: 200
+    uri-encoding: UTF-8
+    basedir: /data/${spring.application.name}/tomcat-tmp/
+    accesslog:
+      enabled: true
+
+spring:
+  application:
+    name: springBoot
+  profiles:
+    active: @cloud.profile@
+    include: kafka
+  http:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 50MB
+  mvc:
+    static-path-pattern: /static/**
+  boot:
+    admin:
+      url: http://cloud-admin:8000
+
+logging:
+  path: /data/${spring.application.name}/logs/
+
+startup:
+  domain: non
+  server-context: ${startup.domain}${server.context-path}
+  static-res-locate: ${startup.server-context}/static:server/
+  internal-res-locate: ${startup.server-context}/static/
+
+mybatis:
+  type-handlers-package: boat.mybatis.handler
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
+    default-executor-type: reuse
